@@ -8,5 +8,5 @@ class Person
 	end
 end
 p=Person.new
-Person.name='varun'
+Person	.name='varun'
 Person.name
