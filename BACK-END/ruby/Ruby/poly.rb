@@ -1,10 +1,11 @@
 class Bird
 
 	def speak(sound)
+		
 		@sound=sound
 		puts sound
 	end
-	def fly(canfly)
+	def fly(sound)
 		
 
 		end
