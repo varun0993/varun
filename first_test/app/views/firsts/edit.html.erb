@@ -1,0 +1,11 @@
+<table>
+<tr>
+<%= form_for @file,url:first_edit_path(@file),method: :put do |f| %>
+	 <th> Enter the firstname<%= f.text_field :firstname%></br></th>
+	<th> Enter the lastname:<%= f.text_field :lastname%></br></th>
+	  <th>Enter email:<%= f.text_field :email%></br></th>
+	 <th> Enter password:<%= f.text_field :password%></br></th>
+	  <%= f.submit %>
+<% end %>	
+</tr>
+</table>
