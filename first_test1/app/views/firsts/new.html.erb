@@ -1,0 +1,34 @@
+<%= form_for @file, url: first_create_path do |u| %>
+        <% if @file.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= pluralize(@form.errors.count, "error") %> prohibited
+                this user from being saved:
+              </h2>
+              <ul>
+                <% @file.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %><p>
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+</p>
+<p>
+    <%= f.label :lastname %><br>
+    <%= f.text_area :lastname %>
+</p>
+<p>
+    <%= f.label :email %><br>
+    <%= f.text_area :email %>
+</p>
+<p>
+    <%= f.label :password %><br>
+    <%= f.text_area :password %>
+</p>
+<p>
+    <%= f.submit %>
+</p>
+<%end%>
+<%end%>
