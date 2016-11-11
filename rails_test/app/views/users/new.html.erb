@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default">
+ <div class="container">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#">
+         <%= image_tag("batman.jpg") %></a>
+   </div>
+   <ul class="nav navbar-nav navbar-right">
+     <li class="active">
+     <li><%= link_to "<button class=btn btn-success>Sign Up</button>".html_safe,user_new_path%>
+     <li><%= link_to "<button class=btn btn-success>Log in</button>".html_safe,login_new_path%>
+     </li>    
+     </ul>
+ </div>
+</nav>
+</nav><center>
+<h1>Sign Up Here</h1>
+
+ <% if @user.errors.any? %>
+   <div class="error_messages">
+     <h2>Form is invalid</h2>
+     <ul>
+       <% for message in @user.errors.full_messages %>
+         <li><%= message %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+ <div class="container">
+ 
+ 
+	<%= form_for @user, url: login_new_path do |f| %>
+	<p>
+	<%= f.label :firstname %>
+    <%= f.text_field :firstname%></br>
+	  </p>
+	  <p>
+	  <%= f.label :lastname%>
+      <%= f.text_field :lastname%></br>	
+	  </p>
+	  <p>
+	  <%= f.label :password%>
+      <%= f.text_field :password%></br>
+	  </p>
+      
+	   <p>
+	  <%= f.label :phonenumber%>
+      <%= f.text_field :phonenumber%></br>
+	  </p>
+       <p>
+	  <%= f.label :email%>
+      <%= f.text_field :email%></br>
+	  </p>
+       <p>
+	  <%= f.label :password_confirmation%>
+      <%= f.text_field :password_confirmation%></br>
+	  </p>
+	 </div>
+
+
+ <%= f.submit :Submit,:class=>"btn btn-success" %>
+ <%= f.submit :Cancel,:class=>"btn btn-success" %>
+  <% end %>
